@@ -1,6 +1,15 @@
-import { DynamicWidget } from "../lib/dynamic";
+"use client"
+
+import { useEffect } from "react"
+import { DynamicWidget } from "../lib/dynamic"
+import { useDynamicContext } from "../lib/dynamic"
 
 export default function Main() {
+  const { user } = useDynamicContext()
+
+  console.log("first name is:", user?.firstName)
+  console.log("some info", user)
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black flex flex-col items-center justify-center text-white">
       <div className="flex flex-col items-center justify-center text-center">
@@ -41,6 +50,7 @@ export default function Main() {
           <h2 className="font-semibold">Dashboard</h2>
         </a>
       </div>
+      <div>{user && <p>{user.firstName}</p>}</div>
     </div>
-  );
+  )
 }
