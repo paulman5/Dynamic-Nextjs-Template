@@ -10,7 +10,10 @@ export default function Main() {
   console.log("first name is:", user?.firstName)
   console.log("some info", user)
 
-  console.log("description:", user?.verifiedCredentials[2].oauthMetadata)
+  console.log(
+    "description:",
+    user?.verifiedCredentials[2].oauthMetadata.description
+  )
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black flex flex-col items-center justify-center text-white">
